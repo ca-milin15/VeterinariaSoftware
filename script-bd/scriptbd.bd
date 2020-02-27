@@ -1,0 +1,69 @@
+create database veterinaria
+use database veterinaria
+
+create table tbl_raza(
+id int not null,
+nombre varchar(50) not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+usuarioCreacion int not null,
+FOREIGN KEY (usuarioCreacion) REFERENCES tbl_usuario(usuarioCreacion)
+PRIMARY KEY (id)
+)
+
+create table tbl_tipoMascota(
+id int not null,
+nombre varchar(50) not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+usuarioCreacion int not null
+PRIMARY KEY (id)
+)
+
+create table tbl_tipoServicio(
+id int not null,
+nombre varchar(50) not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+usuarioCreacion int not null
+PRIMARY KEY (id)
+)
+
+create table tbl_Servicio(
+id int not null,
+nombre varchar(50) not null,
+codigo varchar(10) not null,
+tipoServicio int not null,
+tarifaId int not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+PRIMARY KEY (id)
+)
+
+create table tbl_servicioMascota(
+id int not null,
+servicioId int not null,
+mascotaId int not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+PRIMARY KEY (id)
+)
+
+create table tbl_mascota(
+id int not null,
+nombre varchar(50) not null,
+usuarioId int not null,
+edad int not null,
+fechaNacimiento date not null,
+historiaClinicaId int not null,
+razaId int not null,
+tipoMascotaId int not null,
+peso double not null,
+altura double not null,
+fechaCreacion date not null,
+fechaActualizacion date not null,
+usuarioCreacion int not null,
+PRIMARY KEY (id),
+FOREIGN KEY (id) REFERENCES tbl_raza(id),
+FOREIGN KEY (id) REFERENCES tbl_raza(id)
+)
