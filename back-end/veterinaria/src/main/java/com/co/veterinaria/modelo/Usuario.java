@@ -3,10 +3,15 @@
  */
 package com.co.veterinaria.modelo;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * @author Camilo Rivera 
  * @date 02-mar.-2020 21:35:47
  */
+@Entity
+@Table(name="usuario")
 public class Usuario extends EntidadGenerica{
 
 	private static final long serialVersionUID = -2120091874521953513L;

@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.co.veterinaria.modelo.Raza;
 
 @RestController
-@RequestMapping("raza/")
+@RequestMapping("/raza")
 public class RazaControlador {
 	
 	@Autowired
-	public com.co.veterinaria.servicio.Raza Raza;
+	public com.co.veterinaria.servicio.IRaza Raza;
 	
 	//localhost:8080/softwareVeterinaria/raza/listar  Method: GET
 	@GetMapping("listar")

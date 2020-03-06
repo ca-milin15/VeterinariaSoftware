@@ -5,11 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.co.veterinaria.modelo.TipoMascota;
 import com.co.veterinaria.modelo.dao.TipoMascotaDAO;
-import com.co.veterinaria.servicio.TipoMascota;
+import com.co.veterinaria.servicio.ITipoMascota;
 
 @Service
-public class TipoMascotaServicioImplementacion implements TipoMascota{
+public class TipoMascotaServicioImplementacion implements ITipoMascota{
 
 	@Autowired
 	public TipoMascotaDAO tipoMascotaDao;
@@ -18,8 +19,10 @@ public class TipoMascotaServicioImplementacion implements TipoMascota{
 	 * @see com.co.veterinaria.servicio.TipoMascota#listarTipoMascota()
 	 */
 	@Override
-	public List<com.co.veterinaria.modelo.TipoMascota> listarTipoMascota() {
-		return tipoMascotaDao.findAll();
+	public List<TipoMascota> listarTipoMascota() {
+		List<TipoMascota> list = tipoMascotaDao.findAll();
+		System.out.println(list);
+		return list;
 	}
 
 	/* (non-Javadoc)

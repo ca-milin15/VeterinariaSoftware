@@ -6,20 +6,36 @@ package com.co.veterinaria.modelo;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.Column;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.OneToOne;
+
 /**
  * @author Camilo Rivera
  * @date 02-mar.-2020 21:32:31
  */
+@MappedSuperclass
 public class EntidadGenerica implements Serializable{
 
 	private static final long serialVersionUID = -6990968890603578140L;
 
-	public Integer id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public int id;
 
+	@Column(name="fechacreacion")
 	public LocalDateTime fechaCreacion;
 
-	public LocalDateTime fechaActualizacion;
+	@Column(name="fechaactualizacion")
+	public LocalDateTime fechaactualizacion;
 
+	@OneToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name= "usuariocreacionid")
 	public Usuario usuarioCreacion;
 
 	/**
@@ -56,7 +72,7 @@ public class EntidadGenerica implements Serializable{
 	 * @return the fechaActualizacion
 	 */
 	public LocalDateTime getFechaActualizacion() {
-		return fechaActualizacion;
+		return fechaactualizacion;
 	}
 
 	/**
@@ -64,7 +80,7 @@ public class EntidadGenerica implements Serializable{
 	 *            the fechaActualizacion to set
 	 */
 	public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
-		this.fechaActualizacion = fechaActualizacion;
+		this.fechaactualizacion = fechaActualizacion;
 	}
 
 	/**

@@ -10,18 +10,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.co.veterinaria.modelo.TipoMascota;
+import com.co.veterinaria.servicio.ITipoMascota;
 
 @RestController
-@RequestMapping("tipoMascota/")
+@RequestMapping("/tipoMascota")
 public class TipoMascotaControlador{
 
-	@Autowired
-	public com.co.veterinaria.servicio.TipoMascota tipoMascota;
+	public ITipoMascota iTipoMascota;
 	
+	/**
+	 * @author Camilo Rivera 
+	 * @date 05-mar.-2020 17:04:40
+	 */
+	@Autowired
+	public TipoMascotaControlador(ITipoMascota iTipoMascota) {
+		this.iTipoMascota = iTipoMascota;
+	}
+
 	//localhost:8080/softwareVeterinaria/tipoMascota/listar  Method: GET
 	@GetMapping("listar")
 	public List<TipoMascota> listarTipoMascota(){
-		List<TipoMascota> listaTipoMascota = tipoMascota.listarTipoMascota();
+		List<TipoMascota> listaTipoMascota = iTipoMascota.listarTipoMascota();
 		return listaTipoMascota;
 	}
 

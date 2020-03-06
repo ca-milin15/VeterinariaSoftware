@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.co.veterinaria.modelo.dao.MascotaDAO;
-import com.co.veterinaria.servicio.Mascota;
+import com.co.veterinaria.servicio.IMascota;
 
 
 @Service
-public class MascotaServicioImplementacion implements Mascota{
+public class MascotaServicioImplementacion implements IMascota{
 
 	@Autowired
 	public MascotaDAO MascotaDao;

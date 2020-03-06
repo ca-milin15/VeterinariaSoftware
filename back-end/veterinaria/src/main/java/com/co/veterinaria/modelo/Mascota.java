@@ -1,8 +1,10 @@
 package com.co.veterinaria.modelo;
 
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@Table(name = "Mascota")
+@Entity
+@Table(name = "mascota")
 public class Mascota extends EntidadGenerica {
 
 	private static final long serialVersionUID = -2189517390580263678L;

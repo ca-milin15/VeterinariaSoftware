@@ -10,7 +10,7 @@ apellidos varchar(50) not null,
 direccion varchar(50) not null,
 fechaCreacion datetime not null,
 fechaActualizacion datetime not null,
-usuarioCreacionId int not null,
+usuarioCreacionId int,
 PRIMARY KEY (id),
 FOREIGN KEY (usuarioCreacionId) REFERENCES Usuario(id)
 );

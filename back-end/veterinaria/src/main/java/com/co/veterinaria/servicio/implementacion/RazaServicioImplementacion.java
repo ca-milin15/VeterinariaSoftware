@@ -1,16 +1,16 @@
 package com.co.veterinaria.servicio.implementacion;
 
-import com.co.veterinaria.servicio.Raza;
+import com.co.veterinaria.servicio.IRaza;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RazaServicioImplementacion implements Raza {
+public class RazaServicioImplementacion implements IRaza {
 
 	@Autowired
-	public Raza Raza;
+	public IRaza Raza;
 	
 	@Override
 	public List<com.co.veterinaria.modelo.Raza> ListarRaza() {

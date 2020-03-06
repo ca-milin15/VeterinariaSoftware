@@ -1,6 +1,6 @@
 package com.co.veterinaria.servicio;
 import java.util.List;
-public interface Raza {
+public interface IRaza {
 	
 	List<com.co.veterinaria.modelo.Raza> ListarRaza();
 	
