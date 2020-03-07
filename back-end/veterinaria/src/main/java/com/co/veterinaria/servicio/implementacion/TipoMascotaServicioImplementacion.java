@@ -1,10 +1,12 @@
 package com.co.veterinaria.servicio.implementacion;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.co.veterinaria.compartidos.dto.TipoMascotaDto;
 import com.co.veterinaria.modelo.TipoMascota;
 import com.co.veterinaria.modelo.dao.TipoMascotaDAO;
 import com.co.veterinaria.servicio.ITipoMascota;
@@ -19,10 +21,20 @@ public class TipoMascotaServicioImplementacion implements ITipoMascota{
 	 * @see com.co.veterinaria.servicio.TipoMascota#listarTipoMascota()
 	 */
 	@Override
-	public List<TipoMascota> listarTipoMascota() {
-		List<TipoMascota> list = tipoMascotaDao.findAll();
-		System.out.println(list);
-		return list;
+	public List<TipoMascotaDto> listarTipoMascota() {
+		return generarListaTipoMascotaDtoDesdeEntidad(tipoMascotaDao.findAll());
+	}
+
+	/**
+	 * @author Camilo Rivera 
+	 * @date 07-mar.-2020 14:35:08
+	 * @param listaMascota
+	 * @return
+	 */
+	private List<TipoMascotaDto> generarListaTipoMascotaDtoDesdeEntidad(List<TipoMascota> listaMascota) {
+		return listaMascota.stream().map(tipoMascota -> {
+			return new TipoMascotaDto(tipoMascota);
+		}).collect(Collectors.toList());
 	}
 
 	/* (non-Javadoc)

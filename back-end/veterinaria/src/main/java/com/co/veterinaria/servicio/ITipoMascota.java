@@ -2,9 +2,11 @@ package com.co.veterinaria.servicio;
 
 import java.util.List;
 
+import com.co.veterinaria.compartidos.dto.TipoMascotaDto;
+
 public interface ITipoMascota {
 
-	List<com.co.veterinaria.modelo.TipoMascota> listarTipoMascota();
+	List<TipoMascotaDto> listarTipoMascota();
 	
 	Boolean guardarTipoMascota();
 	

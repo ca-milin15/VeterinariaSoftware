@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.co.veterinaria.compartidos.dto.TipoMascotaDto;
 import com.co.veterinaria.modelo.TipoMascota;
 import com.co.veterinaria.servicio.ITipoMascota;
 
@@ -29,8 +30,8 @@ public class TipoMascotaControlador{
 
 	//localhost:8080/softwareVeterinaria/tipoMascota/listar  Method: GET
 	@GetMapping("listar")
-	public List<TipoMascota> listarTipoMascota(){
-		List<TipoMascota> listaTipoMascota = iTipoMascota.listarTipoMascota();
+	public List<TipoMascotaDto> listarTipoMascota(){
+		List<TipoMascotaDto> listaTipoMascota = iTipoMascota.listarTipoMascota();
 		return listaTipoMascota;
 	}
 

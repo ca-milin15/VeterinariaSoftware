@@ -6,6 +6,7 @@ package com.co.veterinaria.modelo;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -32,9 +33,9 @@ public class EntidadGenerica implements Serializable{
 	public LocalDateTime fechaCreacion;
 
 	@Column(name="fechaactualizacion")
-	public LocalDateTime fechaactualizacion;
+	public LocalDateTime fechaActualizacion;
 
-	@OneToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL, optional= true)
 	@JoinColumn(name= "usuariocreacionid")
 	public Usuario usuarioCreacion;
 
@@ -72,7 +73,7 @@ public class EntidadGenerica implements Serializable{
 	 * @return the fechaActualizacion
 	 */
 	public LocalDateTime getFechaActualizacion() {
-		return fechaactualizacion;
+		return fechaActualizacion;
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class EntidadGenerica implements Serializable{
 	 *            the fechaActualizacion to set
 	 */
 	public void setFechaActualizacion(LocalDateTime fechaActualizacion) {
-		this.fechaactualizacion = fechaActualizacion;
+		this.fechaActualizacion = fechaActualizacion;
 	}
 
 	/**
