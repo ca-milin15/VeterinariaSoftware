@@ -33,6 +33,7 @@ public class TipoMascotaServicioImplementacion implements ITipoMascota{
 	 */
 	private List<TipoMascotaDto> generarListaTipoMascotaDtoDesdeEntidad(List<TipoMascota> listaMascota) {
 		return listaMascota.stream().map(tipoMascota -> {
+			
 			return new TipoMascotaDto(tipoMascota);
 		}).collect(Collectors.toList());
 	}

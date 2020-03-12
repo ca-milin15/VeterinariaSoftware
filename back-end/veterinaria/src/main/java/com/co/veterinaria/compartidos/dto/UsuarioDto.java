@@ -34,7 +34,6 @@ public class UsuarioDto extends EntidadGeneralDto{
 		setId(id);
 		setFechaCreacion(MetodosGenerales.convertirDesdeLocalDateTimeALong(usuarioCreacion.getFechaCreacion()));
 		setFechaActualizacion(MetodosGenerales.convertirDesdeLocalDateTimeALong(usuarioCreacion.getFechaActualizacion()));
-		setUsuarioCreacion(usuarioCreacion.getUsuarioCreacion() != null ? new UsuarioDto(usuarioCreacion.getUsuarioCreacion()) : null);
 	}
 
 	/**
