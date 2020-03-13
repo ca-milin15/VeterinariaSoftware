@@ -1,0 +1,9 @@
+
+<ion-content class="formatContent">
+        <span>Usuario:</span>
+        <ion-input [(ngModel)]= "loginObject.usuario"></ion-input>
+        <span>Clave:</span>
+        <ion-input [(ngModel)]= "loginObject.clave"></ion-input>
+        <ion-button color="success" (click)="iniciarSesion(loginObject)">Aceptar</ion-button>
+      
+</ion-content>
