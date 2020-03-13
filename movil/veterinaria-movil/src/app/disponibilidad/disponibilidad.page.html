@@ -5,5 +5,25 @@
 </ion-header>
 
 <ion-content>
-
+    <ion-item>
+        <ion-label>Servicios</ion-label>
+        <ion-select value="brown" okText="Ok" cancelText="Cancelar">
+          <ion-select-option value="brown">Guarderia</ion-select-option>
+          <ion-select-option value="blonde">Recogida</ion-select-option>
+          <ion-select-option value="black">Peluqueria</ion-select-option>
+          <ion-select-option value="red">Medica</ion-select-option>
+        </ion-select>
+      </ion-item>
+    <ion-item>
+      <ion-label>Fecha servicio</ion-label>
+      <ion-label position="floating">MM/DD/YYYY</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
+    </ion-item>
+    <ion-button expand="full" color="success">Consultar Disponibilidad</ion-button>
+  <!-- fab placed to the top start -->
+  <ion-fab routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="arrow-back-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

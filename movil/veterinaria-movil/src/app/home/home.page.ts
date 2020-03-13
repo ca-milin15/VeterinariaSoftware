@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router'
 
 @Component({
@@ -9,18 +9,8 @@ import { Router } from '@angular/router'
 })
 export class HomePage {
 
-  constructor(private menu: MenuController, private router: Router) {}
-  openFirst() {
-    this.menu.enable(true, 'first');
-    this.menu.open('first');
-  }
+  constructor(private menu: MenuController, 
+              private router: Router) {}
 
-  openEnd() {
-    this.menu.open('end');
-  }
-
-  openCustom() {
-    this.menu.enable(true, 'custom');
-    this.menu.open('custom');
-  }
+  
 }
