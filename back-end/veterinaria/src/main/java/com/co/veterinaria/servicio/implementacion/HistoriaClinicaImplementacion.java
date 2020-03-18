@@ -14,7 +14,7 @@ public class HistoriaClinicaImplementacion implements IHistoriaClinica {
 	public HistoriaClinicaDAO historiaCLinica;
 
 	@Override
-	public List<IHistoriaClinica> listarHistoriaClinica() {
+	public List<com.co.veterinaria.modelo.HistoriaClinica> listarHistoriaClinica() {
 		
 		return null;
 	}

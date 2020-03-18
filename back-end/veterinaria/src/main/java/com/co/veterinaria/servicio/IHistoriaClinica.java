@@ -3,7 +3,7 @@ import java.util.List;
 
 public interface IHistoriaClinica {
 	
-	List<IHistoriaClinica> listarHistoriaClinica();
+	List<com.co.veterinaria.modelo.HistoriaClinica> listarHistoriaClinica();
 	
 	Boolean guardarHistoriaCliente();
 	
