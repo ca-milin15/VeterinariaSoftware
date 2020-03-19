@@ -1,10 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>cita</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Mis citas</ion-title>
+        <ion-fab style="margin-top: -12%; margin-left:60%;">
+            <ion-fab-button size="small" color="danger" routerLink="/mascota">
+                <ion-icon name="heart-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
+  <div class="format-content">
     <ion-card>
         <ion-card-header >
             <img src="assets/medica.jpg">
@@ -39,6 +48,7 @@
           Estado: Cancelada
         </ion-card-content>
     </ion-card>
+  </div>
 
   <!-- fab placed to the top start -->
   <ion-fab routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">

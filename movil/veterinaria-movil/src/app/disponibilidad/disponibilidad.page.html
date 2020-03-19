@@ -1,10 +1,19 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>disponibilidad</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+          <ion-menu-button autoHide="false"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Disponibilidad</ion-title>
+        <ion-fab style="margin-top: -12%; margin-left:60%;">
+            <ion-fab-button size="small" color="danger" routerLink="/mascota">
+                <ion-icon name="heart-outline"></ion-icon>
+            </ion-fab-button>
+        </ion-fab>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content>
+  <div class="format-content">
     <ion-item>
         <ion-label>Servicios</ion-label>
         <ion-select value="brown" okText="Ok" cancelText="Cancelar">
@@ -20,10 +29,11 @@
       <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09" value="2002-09-23T15:03:46.789"></ion-datetime>
     </ion-item>
     <ion-button expand="full" color="success">Consultar Disponibilidad</ion-button>
-  <!-- fab placed to the top start -->
-  <ion-fab routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+    <!-- fab placed to the top start -->
+    <ion-fab routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button>
+        <ion-icon name="arrow-back-circle"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
 </ion-content>

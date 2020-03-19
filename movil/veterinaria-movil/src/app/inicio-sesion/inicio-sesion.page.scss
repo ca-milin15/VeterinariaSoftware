@@ -1,3 +1,35 @@
-.formatContent{
-    margin-top: 10px;
+.format-content{
+    background-image: url(../../assets/wallpaper.jpg);
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    height: 98%;
+    padding-top: 1%;
+}
+.content-home{
+    margin-top: 8%;
+    margin-left: 5%;
+    width: 90%;
+}
+
+ion-item{
+    --ion-background-color: ;
+ }
+
+.content-input{
+    margin-top: 5%;
+    margin-left: 5%;
+    color: white;
+}
+
+.image{
+    //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    border: 6px solid #ddd;
+    border-radius: 4px;
+}
+.format-letter{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    font-size: 15px;
 }

@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'disponibilidad',
     loadChildren: () => import('./disponibilidad/disponibilidad.module').then( m => m.DisponibilidadPageModule)
   },
+  {
+    path: 'mascota',
+    loadChildren: () => import('./mascota/mascota.module').then( m => m.MascotaPageModule)
+  },
 ];
 
 @NgModule({
