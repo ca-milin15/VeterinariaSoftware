@@ -1,5 +1,7 @@
 {
   "name": "veterinaria-movil",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
