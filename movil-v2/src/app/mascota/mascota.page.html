@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Mis mascota</ion-title>
+      <ion-fab style="margin-top: -12%; margin-left:60%;">
+          <ion-fab-button size="small" color="danger" routerLink="/mascota">
+            <i class="fa fa-paw" aria-hidden="true"></i>
+          </ion-fab-button>
+      </ion-fab>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="format-content">
+    <ion-card>
+        <ion-card-header >
+            <img src="./assets/perro.jpeg">
+        </ion-card-header>
+        <ion-card-content>
+          Nombre: Kiara <br>
+          Tipo: Canino  <br>
+          <ion-badge item-end>Ver carnet</ion-badge>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header >
+            <img src="./assets/gato.jpeg">
+        </ion-card-header>
+        <ion-card-content>
+            Nombre: Garfi <br>
+            Tipo: Felino <br>
+            <ion-badge item-end>Ver carnet</ion-badge>
+          </ion-card-content>
+    </ion-card>
+    
+  </div>
+
+  <!-- fab placed to the top start -->
+  <ion-fab routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="small">
+      <i class="fa fa-home" aria-hidden="true"></i>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Mis citas</ion-title>
+      <ion-fab style="margin-top: -12%; margin-left:60%;">
+          <ion-fab-button size="small" color="danger" routerLink="/mascota">
+            <i class="fa fa-paw" aria-hidden="true"></i>
+          </ion-fab-button>
+      </ion-fab>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="format-content">
+    <ion-card>
+        <ion-card-header >
+            <img src="./assets/medica.jpg">
+        </ion-card-header>
+        <ion-card-content>
+            Cita N: 12 <br>
+            Hora Inicio: 13.00<br>
+            Horafin: 14.00<br>
+            Estado: Activa
+            <ion-button color="danger" size="small">Cancelar Cita</ion-button>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header >
+            <img src="./assets/guarderia.jpeg">
+        </ion-card-header>
+        <ion-card-content>
+            Cita N: 13 <br>
+            Hora Inicio: 9.00<br>
+            Horafin: 14.00<br>
+            Estado: Cancelada
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header >
+            <img src="./assets/domicilio.jpeg">
+        </ion-card-header>
+        <ion-card-content>
+            Cita N: 30 <br>
+            Hora Inicio: 7.00<br>
+            Horafin: 8.00<br>
+            Estado: Cancelada
+        </ion-card-content>
+    </ion-card>
+    <ion-fab size="small" routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
+  
+      <ion-fab-button size="small">
+          <i class="fa fa-home" aria-hidden="true"></i>
+      </ion-fab-button>
+    </ion-fab>
+</div>
+</ion-content>

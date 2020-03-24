@@ -1,0 +1,7 @@
+{
+  "name": "front_proy_orders",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

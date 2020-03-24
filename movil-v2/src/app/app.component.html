@@ -1,0 +1,25 @@
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"><link href="https://unpkg.com/ionicons@4.2.0/dist/css/ionicons.min.css" rel="stylesheet">
+<ion-app>
+  <div class="format-content">
+  <ion-menu side="start" menuId="first" auto-hide="false" contentId="main">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-buttons slot="start">
+          <ion-menu-button>
+            <i class="fas fa-bars"></i>
+          </ion-menu-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="true">
+          <ion-item routerLink="/cita">Citas</ion-item>
+          <ion-item routerLink="/disponbilidad">Disponibilidad</ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+<ion-router-outlet id="main"></ion-router-outlet>
+</div>
+</ion-app>
