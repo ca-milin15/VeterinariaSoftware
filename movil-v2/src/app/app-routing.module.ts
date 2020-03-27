@@ -7,7 +7,9 @@ const routes: Routes = [
   { path: 'cita', loadChildren: './cita/cita.module#CitaPageModule' },
   { path: 'home', loadChildren: './home/home.module#HomePageModule' },
   { path: 'disponbilidad', loadChildren: './disponbilidad/disponbilidad.module#DisponbilidadPageModule' },
-  { path: 'mascota', loadChildren: './mascota/mascota.module#MascotaPageModule' }
+  { path: 'mascota', loadChildren: './mascota/mascota.module#MascotaPageModule' },
+  { path: 'carnet', loadChildren: './carnet/carnet.module#CarnetPageModule' },
+  { path: 'menu-prueba', loadChildren: './menu-prueba/menu-prueba.module#MenuPruebaPageModule' }
 ];
 @NgModule({
   imports: [
