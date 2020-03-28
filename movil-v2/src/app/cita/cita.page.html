@@ -1,10 +1,12 @@
 <ion-header>
   <ion-toolbar color="danger">
       <ion-buttons slot="start">
-        <ion-menu-button autoHide="false"></ion-menu-button>
+        <ion-menu-button autoHide="false">
+                <i style="zoom:1.5;" class="fa fa-bars"></i>
+        </ion-menu-button>
       </ion-buttons>
       <ion-title>Mis citas</ion-title>
-      <ion-fab style="margin-top: -12%; margin-left:60%;">
+      <ion-fab style="margin-top: -9%; margin-left:60%;">
           <ion-fab-button size="small" color="danger" routerLink="/mascota">
             <i class="fa fa-paw" aria-hidden="true"></i>
           </ion-fab-button>
@@ -23,7 +25,7 @@
             Hora Inicio: 13.00<br>
             Horafin: 14.00<br>
             Estado: Activa
-            <ion-button color="danger" size="small">Cancelar Cita</ion-button>
+            <ion-button color="danger" (click)="presentAlertConfirm()" size="small">Cancelar Cita</ion-button>
         </ion-card-content>
     </ion-card>
     <ion-card>

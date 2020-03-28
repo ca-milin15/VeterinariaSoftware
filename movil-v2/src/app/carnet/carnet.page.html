@@ -1,10 +1,12 @@
 <ion-header>
   <ion-toolbar color="danger">
       <ion-buttons slot="start">
-        <ion-menu-button autoHide="false"></ion-menu-button>
+        <ion-menu-button autoHide="false">
+            <i style="zoom:1.5;" class="fa fa-bars"></i>
+        </ion-menu-button>
       </ion-buttons>
       <ion-title>Carnet - {{this.infoMascota.nombreMascota}}</ion-title>
-      <ion-fab style="margin-top: -12%; margin-left:60%;">
+      <ion-fab style="margin-top: -7%; margin-left:60%;">
           <ion-fab-button size="small" color="danger" routerLink="/mascota">
             <i class="fa fa-paw" aria-hidden="true"></i>
           </ion-fab-button>
@@ -14,15 +16,17 @@
 
 <ion-content>
   <div class="format-content">
-
     <ion-list>
-      <ion-item>
-        <ion-label>Pentavalente</ion-label>
-      </ion-item>
-      <ion-item>
-        <ion-label>Hexavalente</ion-label>
-      </ion-item>
-    </ion-list>
+        <ion-item>
+          <ion-label>Pentavalente</ion-label>
+          <ion-note slot="end">2018/12/12</ion-note>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Hexavalente</ion-label>
+          <ion-note slot="end">2018/12/12</ion-note>
+        </ion-item>
+      </ion-list>
   </div>
 
   <!-- fab placed to the top start -->
