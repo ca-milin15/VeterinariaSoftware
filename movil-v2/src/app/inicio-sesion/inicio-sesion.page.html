@@ -5,15 +5,15 @@
                 <img src="./assets/home.png" alt="" class="image">
                 <div class="content-input">
                         <ion-item class="prueba">
-                                <ion-label position="floating" class="format-letter">Usuario</ion-label>
-                                <ion-input [(ngModel)]= "loginObject.usuario" ></ion-input>
+                                <ion-label position="floating" class="format-letter">Cedula</ion-label>
+                                <ion-input [(ngModel)]= "txtCedula" ></ion-input>
                         </ion-item>
                         <ion-item>
                                 <ion-label position="floating" class="format-letter">Clave</ion-label>
-                                <ion-input [(ngModel)]= "loginObject.clave"></ion-input>
+                                <ion-input [(ngModel)]= "txtClave"></ion-input>
                         </ion-item>
                 </div>
-                <ion-button expand="full" color="success" (click)="iniciarSesion(loginObject)">Aceptar</ion-button>
+                <ion-button expand="full" color="success" (click)="iniciarSesion()">Aceptar</ion-button>
         </div>
   </div>
 </ion-content>
