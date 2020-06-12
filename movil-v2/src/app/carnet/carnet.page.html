@@ -5,7 +5,7 @@
             <i style="zoom:1.5;" class="fa fa-bars"></i>
         </ion-menu-button>
       </ion-buttons>
-      <ion-title>Carnet - {{this.infoMascota.nombreMascota}}</ion-title>
+      <ion-title>Carnet - {{infoMascota.nombre}}</ion-title>
       <ion-fab style="margin-top: -7%; margin-left:60%;">
           <ion-fab-button size="small" color="danger" routerLink="/mascota">
             <i class="fa fa-paw" aria-hidden="true"></i>
@@ -17,14 +17,9 @@
 <ion-content>
   <div class="format-content">
     <ion-list>
-        <ion-item>
-          <ion-label>Pentavalente</ion-label>
-          <ion-note slot="end">2018/12/12</ion-note>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label>Hexavalente</ion-label>
-          <ion-note slot="end">2018/12/12</ion-note>
+        <ion-item *ngFor="let producto of infoMascota.productos">
+          <ion-label>{{producto.producto}}</ion-label>
+          <ion-note slot="end">{{producto.fecha}}</ion-note>
         </ion-item>
       </ion-list>
   </div>

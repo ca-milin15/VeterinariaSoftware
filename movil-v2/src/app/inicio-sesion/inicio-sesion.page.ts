@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import {RestApiService} from '../http/rest-api.service';
 import { AlertController } from '@ionic/angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -13,10 +14,12 @@ export class InicioSesionPage implements OnInit {
   txtCedula: string
   txtClave: string
   objetoLogin: object
-  usuarioLogueado: object
 
-  constructor( private router: Router, private restApiService: RestApiService,
-               private alertController: AlertController) { 
+  constructor( private router: Router, 
+               private restApiService: RestApiService,
+               private alertController: AlertController, 
+               private storage: Storage
+              ) { 
   }
 
   ngOnInit() {
@@ -27,10 +30,10 @@ export class InicioSesionPage implements OnInit {
       'cedula': this.txtCedula,
       'contrasena': this.txtClave
     }
-    var respuestaHttp = this.restApiService.functionLogin(this.objetoLogin)
+    var respuestaHttp = this.restApiService.funcionLogin(this.objetoLogin)
     .subscribe((response) => {
-       response = this.usuarioLogueado
-       this.router.navigate(['home'])
+      this.storage.set('usuarioLogueado', response)
+      this.router.navigate(['home'])
     }, (error) => {
       this.presentAlertConfirm()
     });

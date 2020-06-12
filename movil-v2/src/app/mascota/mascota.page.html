@@ -16,25 +16,15 @@
 
 <ion-content>
   <div class="format-content">
-    <ion-card>
+    <ion-card *ngFor="let mascota of listaMascota">
         <ion-card-header >
-            <img src="./assets/perro.jpeg">
+            <img src={{mascota.imagen}}>
         </ion-card-header>
         <ion-card-content>
-          Nombre: Kiara <br>
-          Tipo: Canino  <br>
-          <ion-badge item-end (click)="verCarnet('Kiara')">Ver carnet</ion-badge>
+          Nombre: {{mascota.nombre}} <br>
+          Tipo: {{mascota.tipo}}  <br>
+          <ion-badge item-end (click)="verCarnet(mascota.carnet)">Ver carnet</ion-badge>
         </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-header >
-            <img src="./assets/gato.jpeg">
-        </ion-card-header>
-        <ion-card-content>
-            Nombre: Garfi <br>
-            Tipo: Felino <br>
-            <ion-badge item-end (click)="verCarnet('Garfi')">Ver carnet</ion-badge>
-          </ion-card-content>
     </ion-card>
     
   </div>
