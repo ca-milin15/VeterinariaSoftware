@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router/src/router';
+import { RestApiService } from '../http/rest-api.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-mascota',
@@ -9,18 +11,28 @@ import { NavigationExtras } from '@angular/router/src/router';
 })
 export class MascotaPage implements OnInit {
 
-  constructor(private router: Router) { }
+  objetoListaMascota: object
+  usuarioLogueado: string
+  listaMascota: any
+
+  constructor(private router: Router,
+              private restApiService: RestApiService,
+              private storage: Storage) { }
 
   ngOnInit() {
+    this.storage.get('usuarioLogueado').then(
+      res => this.restApiService.funcionListaMascota(res).subscribe((data) => {
+        this.listaMascota = data
+      }, error => {
+        alert('error')
+      })
+    )
   }
 
-  verCarnet(nombreMascota){
-    let infoMascota = {
-      'nombreMascota': nombreMascota
-    }
+  verCarnet(carnet){
     let paramsToCarnet: NavigationExtras = {
       queryParams:{
-      'infoMascota': JSON.stringify(infoMascota)
+      'infoMascota': JSON.stringify(carnet)
       }
     }
     this.router.navigate(['carnet'], paramsToCarnet);
