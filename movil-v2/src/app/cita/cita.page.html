@@ -16,40 +16,19 @@
 
 <ion-content>
     <div class="format-content">
-    <ion-card>
+    <ion-card *ngFor="let cita of listaCita">
         <ion-card-header >
-            <img src="./assets/medica.jpg">
+            <img src={{cita.tipoCita.imagenTipoCita}}>
         </ion-card-header>
         <ion-card-content>
-            Cita N: 12 <br>
-            Hora Inicio: 13.00<br>
-            Horafin: 14.00<br>
-            Estado: Activa
+            Cita N: {{cita.numeroCita}} <br>
+            Hora Inicio: {{cita.horaInicio}}<br>
+            Horafin: {{cita.horaFin}}<br>
+            Estado: {{cita.estado}}
             <ion-button color="danger" (click)="presentAlertConfirm()" size="small">Cancelar Cita</ion-button>
         </ion-card-content>
     </ion-card>
-    <ion-card>
-        <ion-card-header >
-            <img src="./assets/guarderia.jpeg">
-        </ion-card-header>
-        <ion-card-content>
-            Cita N: 13 <br>
-            Hora Inicio: 9.00<br>
-            Horafin: 14.00<br>
-            Estado: Cancelada
-        </ion-card-content>
-    </ion-card>
-    <ion-card>
-        <ion-card-header >
-            <img src="./assets/domicilio.jpeg">
-        </ion-card-header>
-        <ion-card-content>
-            Cita N: 30 <br>
-            Hora Inicio: 7.00<br>
-            Horafin: 8.00<br>
-            Estado: Cancelada
-        </ion-card-content>
-    </ion-card>
+    
     <ion-fab size="small" routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
   
       <ion-fab-button size="small">

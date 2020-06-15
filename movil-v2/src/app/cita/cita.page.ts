@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { RestApiService } from '../http/rest-api.service';
+import { Storage } from '@ionic/storage';
 
 
 @Component({
@@ -9,11 +11,19 @@ import { AlertController } from '@ionic/angular';
 })
 export class CitaPage implements OnInit {
 
-  constructor(private alertController: AlertController) { 
-  }
+  listaCita : object
+  constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage) { }
 
   ngOnInit() {
+    this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionCitaMascota(user).subscribe((data)=>{
+    this.listaCita = data 
+    },
+    error =>{
+      alert('error')
+    }
+    ))
   }
+
 
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
