@@ -22,9 +22,9 @@ export class MascotaPage implements OnInit {
   ngOnInit() {
     this.storage.get('usuarioLogueado').then(
       res => this.restApiService.funcionListaMascota(res).subscribe((data) => {
-        this.listaMascota = data
+        this.listaMascota = data['data']
       }, error => {
-        alert('error')
+        alert(JSON.stringify(error))
       })
     )
   }

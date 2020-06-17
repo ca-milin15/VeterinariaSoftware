@@ -18,12 +18,19 @@
   <div class="format-content">
     <ion-card *ngFor="let mascota of listaMascota">
         <ion-card-header >
-            <img src={{mascota.imagen}}>
+            <img src="https://dam.ngenespanol.com/wp-content/uploads/2019/10/perros-personalidad-2.jpg">
         </ion-card-header>
         <ion-card-content>
           Nombre: {{mascota.nombre}} <br>
-          Tipo: {{mascota.tipo}}  <br>
-          <ion-badge item-end (click)="verCarnet(mascota.carnet)">Ver carnet</ion-badge>
+          <div class="izquierda"> 
+              Edad: {{mascota.edad}}  <br>
+              Peso: {{mascota.peso}}  <br>
+        </div>
+          <div class="derecha"> 
+                Altura: {{mascota.altura}}  <br>
+                <ion-badge item-end (click)="verCarnet(mascota.carnet)">Ver carnet</ion-badge>
+          </div>
+         
         </ion-card-content>
     </ion-card>
     

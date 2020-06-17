@@ -18,13 +18,15 @@
     <div class="format-content">
     <ion-card *ngFor="let cita of listaCita">
         <ion-card-header >
-            <img src={{cita.tipoCita.imagenTipoCita}}>
+            <img src="https://dam.ngenespanol.com/wp-content/uploads/2019/10/perros-personalidad-2.jpg">
         </ion-card-header>
         <ion-card-content>
-            Cita N: {{cita.numeroCita}} <br>
-            Hora Inicio: {{cita.horaInicio}}<br>
-            Horafin: {{cita.horaFin}}<br>
-            Estado: {{cita.estado}}
+            Cita N: {{cita.citaid}} <br>
+            Mascota: {{cita.mascotaId}}<br>
+            Estado: <span *ngIf="cita.estadoCita" >Activa</span>
+            <span *ngIf="!cita.estadoCita">Cancelada</span>
+             
+
             <ion-button color="danger" (click)="presentAlertConfirm()" size="small">Cancelar Cita</ion-button>
         </ion-card-content>
     </ion-card>

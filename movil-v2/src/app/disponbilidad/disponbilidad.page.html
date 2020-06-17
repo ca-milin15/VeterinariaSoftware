@@ -19,8 +19,8 @@
   <ion-item>
       <ion-label>Servicios</ion-label>
       <ion-select value="brown" okText="Ok" cancelText="Cancelar" [(ngModel)]= "idServicio">
-        <ion-select-option value="{{servicio.idServicio}}" *ngFor="let servicio of servicios">
-          {{servicio.nombreServicio}}
+        <ion-select-option value="{{servicio.servicioId}}" *ngFor="let servicio of servicios">
+          {{servicio.nombre}}
         </ion-select-option>
       
       </ion-select>
@@ -31,6 +31,15 @@
     <ion-datetime displayFormat="MM/DD/YYYY" min="2020-06-14" max="2090-12-09" value="2002-09-23T15:03:46.789" [(ngModel)]= "fecha"></ion-datetime>
   </ion-item>
   <ion-button expand="full" color="success" (click)="disponibilidadServicio()" >Consultar Disponibilidad</ion-button>
+
+  <ion-card *ngFor="let disponibilidad of listaDisponibilidades">
+    <ion-card-content>
+      Disponibilidad ID: {{disponibilidad.disponibilidadid}}<br>
+      Recurso Veterinaria ID: {{disponibilidad.rescursoVeterinariaid}}<br>
+      Servicio ID: {{disponibilidad.servicioId}}<br>
+      <ion-button expand="full" color="primary" (click)="presentAlertConfirm()" >Agendar</ion-button>
+    </ion-card-content>
+  </ion-card>
 
   <ion-fab size="small" routerLink="/home" vertical="bottom" horizontal="end" slot="fixed">
 

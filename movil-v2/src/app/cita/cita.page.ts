@@ -16,7 +16,7 @@ export class CitaPage implements OnInit {
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionCitaMascota(user).subscribe((data)=>{
-    this.listaCita = data 
+    this.listaCita = data ['data']
     },
     error =>{
       alert('error')

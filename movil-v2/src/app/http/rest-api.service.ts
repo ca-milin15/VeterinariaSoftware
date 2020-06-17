@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class RestApiService {
 
-  apiURL:string = 'http://demo0468101.mockable.io';
+  apiURL:string = 'http://13.65.208.101/api';
   handleError: object
 
   constructor(private http: HttpClient) { }
@@ -19,29 +19,29 @@ export class RestApiService {
 
   funcionListaMascota(objetoLogueado){
     var header = this.funcionConstruirHeader(objetoLogueado['sessionToken'])
-    return this.http.get(this.apiURL+"/mascotas?usuarioId=" + objetoLogueado['id'],header)
+    return this.http.get(this.apiURL+"/pet",header)
   }
 
   funcionCitaMascota (objetoLogueado) {
     var header = this.funcionConstruirHeader(objetoLogueado['sessionToken'])
-    return this.http.get(this.apiURL+"/citasmascota?usuarioId="+ objetoLogueado['id'],header)
+    return this.http.get(this.apiURL+"/appointment",header)
   }
 
   funcionServicios (objetoLogueado) {
     var header = this.funcionConstruirHeader(objetoLogueado['sessionToken'])
-    return this.http.get(this.apiURL+"/servicio",header)
+    return this.http.get(this.apiURL+"/service",header)
   }
 
   funcionListaDisponibilidad (objetoDisponibilidad) {
     var header = this.funcionConstruirHeader(objetoDisponibilidad['sessionToken'])
-    return this.http.get(this.apiURL+"/listaDisponibilidad?idServicio="+objetoDisponibilidad['idServicio']+"&fecha="+objetoDisponibilidad['fecha'],header)
+    return this.http.get(this.apiURL+"/availability",header)
   }
 
   private funcionConstruirHeader(token:string){  
     return {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'token': token
+        'x-access-token': token
       })
     }  
   }

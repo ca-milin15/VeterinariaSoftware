@@ -14,12 +14,13 @@ export class DisponbilidadPage implements OnInit {
   idServicio: string 
   fecha: string
   token:string
+  listaDisponibilidades:object
   objetoDisponibilidad:object
   constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage) { }
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionServicios(user).subscribe((data)=>{
-      this.servicios = data 
+      this.servicios = data ['data']
       this.token = user['sessionToken']
       },
       error =>{
@@ -35,6 +36,37 @@ export class DisponbilidadPage implements OnInit {
       'sessionToken': this.token
     }
 
-    var respuestaHttp = this.restApiService.funcionListaDisponibilidad(this.objetoDisponibilidad)
-}
+    var respuestaHttp = this.restApiService.funcionListaDisponibilidad(this.objetoDisponibilidad).subscribe((data)=>{
+      this.listaDisponibilidades = data
+    },
+    error =>{
+    ('error')
+    })
+  }
+
+  async presentAlertConfirm() {
+    const alert = await this.alertController.create({
+      header: 'Agendar cita',
+      message: 'Esta seguro de agendar la cita?',
+      buttons: [
+        {
+          text: 'SI',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: (blah) => {
+            console.log('Cita Agendada');
+          }
+        }, {
+          text: 'NO',
+          handler: () => {
+            console.log('Cita cancelada');
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
 }
