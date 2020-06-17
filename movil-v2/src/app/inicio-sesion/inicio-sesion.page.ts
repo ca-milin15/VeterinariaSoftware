@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import {RestApiService} from '../http/rest-api.service';
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -18,11 +19,13 @@ export class InicioSesionPage implements OnInit {
   constructor( private router: Router, 
                private restApiService: RestApiService,
                private alertController: AlertController, 
-               private storage: Storage
+               private storage: Storage,
+              private menuController: MenuController
               ) { 
   }
 
   ngOnInit() {
+    this.menuController.enable(false)
   }
 
   iniciarSesion(){
@@ -34,6 +37,7 @@ export class InicioSesionPage implements OnInit {
     .subscribe((response) => {
       this.storage.set('usuarioLogueado', response)
       this.router.navigate(['home'])
+      this.menuController.enable(true)
     }, (error) => {
       this.presentAlertConfirm()
     });

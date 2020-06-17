@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { RestApiService } from '../http/rest-api.service';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -13,7 +14,11 @@ import { Storage } from '@ionic/storage';
 export class CitaPage implements OnInit {
 
   listaCita : object
-  constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage, private router:Router) { }
+  constructor(private alertController: AlertController, 
+              private restApiService:RestApiService, 
+              private storage:Storage, 
+              private router:Router,
+              private menuController: MenuController) { }
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionCitaMascota(user).subscribe((data)=>{
@@ -52,6 +57,7 @@ export class CitaPage implements OnInit {
 
   cerrarSesion(){
     this.storage.remove('usuarioLogueado')
+    this.menuController.enable(false)
     this.router.navigate(['inicio-sesion'])
   }
 

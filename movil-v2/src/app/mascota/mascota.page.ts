@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router/src/router';
 import { RestApiService } from '../http/rest-api.service';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mascota',
@@ -17,7 +18,8 @@ export class MascotaPage implements OnInit {
 
   constructor(private router: Router,
               private restApiService: RestApiService,
-              private storage: Storage) { }
+              private storage: Storage,
+              private menuController: MenuController) { }
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then(
@@ -40,6 +42,7 @@ export class MascotaPage implements OnInit {
 
   cerrarSesion(){
     this.storage.remove('usuarioLogueado')
+    this.menuController.enable(false)
     this.router.navigate(['inicio-sesion'])
   }
   

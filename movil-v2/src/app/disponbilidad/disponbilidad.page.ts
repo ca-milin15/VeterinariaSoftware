@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { RestApiService } from '../http/rest-api.service';
 import { Storage } from '@ionic/storage';
+import {  MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-disponbilidad',
@@ -17,7 +18,11 @@ export class DisponbilidadPage implements OnInit {
   token:string
   listaDisponibilidades:object
   objetoDisponibilidad:object
-  constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage, private router:Router) { }
+  constructor(private alertController: AlertController, 
+              private restApiService:RestApiService, 
+              private storage:Storage, 
+              private router:Router,
+              private menuController: MenuController) { }
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionServicios(user).subscribe((data)=>{
@@ -38,7 +43,7 @@ export class DisponbilidadPage implements OnInit {
     }
 
     var respuestaHttp = this.restApiService.funcionListaDisponibilidad(this.objetoDisponibilidad).subscribe((data)=>{
-      this.listaDisponibilidades = data
+      this.listaDisponibilidades = data ['data']
     },
     error =>{
     ('error')
@@ -71,6 +76,7 @@ export class DisponbilidadPage implements OnInit {
 
   cerrarSesion(){
     this.storage.remove('usuarioLogueado')
+    this.menuController.enable(false)
     this.router.navigate(['inicio-sesion'])
   }
 
