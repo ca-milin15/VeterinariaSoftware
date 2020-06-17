@@ -6,7 +6,12 @@
         </ion-menu-button>
       </ion-buttons>
       <ion-title>Carnet - {{infoMascota.nombre}}</ion-title>
-      <ion-fab style="margin-top: -7%; margin-left:60%;">
+      <ion-fab style="margin-top: -11%; margin-left:68%;">
+        <ion-fab-button size="small" color="danger" (click)="cerrarSesion()">
+          <i class="fa fa-external-link" aria-hidden="true"></i>
+        </ion-fab-button>
+    </ion-fab>
+      <ion-fab style="margin-top: -11%; margin-left:50%;">
           <ion-fab-button size="small" color="danger" routerLink="/mascota">
             <i class="fa fa-paw" aria-hidden="true"></i>
           </ion-fab-button>

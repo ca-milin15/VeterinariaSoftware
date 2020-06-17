@@ -37,4 +37,10 @@ export class MascotaPage implements OnInit {
     }
     this.router.navigate(['carnet'], paramsToCarnet);
   }
+
+  cerrarSesion(){
+    this.storage.remove('usuarioLogueado')
+    this.router.navigate(['inicio-sesion'])
+  }
+  
 }

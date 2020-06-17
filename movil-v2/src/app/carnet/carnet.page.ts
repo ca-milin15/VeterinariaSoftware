@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationExtras } from '@angular/router/src/router';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-carnet',
@@ -12,13 +13,18 @@ export class CarnetPage implements OnInit {
   infoMascota: any
 
   constructor(private activatedRoute: ActivatedRoute, 
-    private router: Router) { 
+    private router: Router,private storage:Storage) { 
     this.activatedRoute.queryParams.subscribe(params => {
       this.infoMascota = JSON.parse(params.infoMascota);
     })
   }
 
   ngOnInit() {
+  }
+
+  cerrarSesion(){
+    this.storage.remove('usuarioLogueado')
+    this.router.navigate(['inicio-sesion'])
   }
 
 }

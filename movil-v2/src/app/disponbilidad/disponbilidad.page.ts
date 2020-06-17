@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { RestApiService } from '../http/rest-api.service';
 import { Storage } from '@ionic/storage';
 
@@ -16,7 +17,7 @@ export class DisponbilidadPage implements OnInit {
   token:string
   listaDisponibilidades:object
   objetoDisponibilidad:object
-  constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage) { }
+  constructor(private alertController: AlertController, private restApiService:RestApiService, private storage:Storage, private router:Router) { }
 
   ngOnInit() {
     this.storage.get('usuarioLogueado').then( user => this.restApiService.funcionServicios(user).subscribe((data)=>{
@@ -66,6 +67,11 @@ export class DisponbilidadPage implements OnInit {
     });
 
     await alert.present();
+  }
+
+  cerrarSesion(){
+    this.storage.remove('usuarioLogueado')
+    this.router.navigate(['inicio-sesion'])
   }
 
 
