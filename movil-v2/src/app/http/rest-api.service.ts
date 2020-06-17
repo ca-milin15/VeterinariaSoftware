@@ -24,7 +24,7 @@ export class RestApiService {
 
   funcionCitaMascota (objetoLogueado) {
     var header = this.funcionConstruirHeader(objetoLogueado['sessionToken'])
-    return this.http.get(this.apiURL+"/appointment",header)
+    return this.http.get(this.apiURL+"/userAppointment/" + objetoLogueado['id'],header)
   }
 
   funcionServicios (objetoLogueado) {

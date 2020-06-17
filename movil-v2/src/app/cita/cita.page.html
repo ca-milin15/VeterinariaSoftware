@@ -5,7 +5,7 @@
                 <i style="zoom:1.5;" class="fa fa-bars"></i>
         </ion-menu-button>
       </ion-buttons>
-      <ion-title>Mis citas</ion-title>
+      <ion-title>Mi(s) cita(s)</ion-title>
       <ion-fab style="margin-top: -11%; margin-left:68%;">
         <ion-fab-button size="small" color="danger" (click)="cerrarSesion()">
           <i class="fa fa-external-link" aria-hidden="true"></i>
@@ -27,7 +27,8 @@
         </ion-card-header>
         <ion-card-content>
             Cita N: {{cita.citaid}} <br>
-            Mascota: {{cita.mascotaId}}<br>
+            Mascota: {{cita.nombreMascota}}<br>
+            Servicio: {{cita.nombreServicio}}<br>
             Estado: <span *ngIf="cita.estadoCita" >Activa</span>
             <span *ngIf="!cita.estadoCita">Cancelada</span>
              
